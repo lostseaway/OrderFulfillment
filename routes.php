@@ -50,3 +50,15 @@ Route::get('/json', array(
 			'as' => 'orders-get-json',
 			'uses' => 'OrdersController@getJsonTemplate'
 	));
+
+Route::group(array('prefix' => 'api/v1'), function()
+	{
+		Route::get('/orders' , array(
+			'as' => 'get-api-orders' ,
+			'uses' => 'ApiController@getOrder'
+		));	
+	    Route::get('/orders/{id}' , array(
+			'as' => 'get-api-orders-id' ,
+			'uses' => 'ApiController@getOrderByID'
+		));		
+	});

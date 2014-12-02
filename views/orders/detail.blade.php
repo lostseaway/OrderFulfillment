@@ -1,6 +1,6 @@
 @include('layout.header')
 <head>
-	<title>DNTk : All Orders</title>
+	<title>DNTk : Order - {{$order->id}}</title>
 </head>
 
 @section('content')
@@ -53,7 +53,7 @@
 				</div>
 
 				<div class="col-md-12" style="margin-bottom: 5px;">
-					<h3>Customer ID: 001</h3>
+					<h3>Customer ID: {{$order->customer_id}}</h3>
 				</div>
 				<table class="table table-hover" style="margin-bottom: 50px;">
 	               	<tr class="info">
@@ -67,23 +67,15 @@
 	               	</tr>
 	               	<tbody>
 	                  <tr>
+	                     <td><h5> {{$order->customer_name}} </h5></td>
+	                     <td><p> {{$order->customer_email}} </p></td>
+	                     <td><p> {{$order->customer_phone}} </p></td>
 	                     <td>
-	                        <h5> person 1 </h5>
-	                    </td>
-	                     <td>
-	                     	<p> person1@dntk-test.com </p>
-	                     </td>
-	                     <td>
-	                        <p> (+66) 81 123 4321 </p>
-	                     </td>
-	                     <td>
-	                     	<p> 12/21 test rd. <br>
-	                     		dntk test bangkok <br>
-	                     		10101
+	                     	<p> {{$order->customer_address}}
 	                     	</p>
 	                     </td>
 	                     <td>
-	                     	<p> Credit </p>
+	                     	<p> {{$order->payment_type}} </p>
 	                     </td>
 	                  </tr>
                		</tbody>
@@ -100,23 +92,23 @@
 					    <tbody>
 					        <tr>
 					            <td scope="row">Invoice Date</td>
-					            <td class="text-left">2014-11-29 14:59:00</td>
+					            <td class="text-left">{{$order->invoice_date}}</td>
 					        </tr>
 					        <tr>
 					            <td scope="row">Created Date</td>
-								<td class="text-left">2014-11-29 14:59:00</td>
+								<td class="text-left">{{$order->created_at}}</td>
 							</tr>
 							<tr>
 					            <td scope="row">Update Date</td>
-								<td class="text-left">2014-11-29 14:59:00</td>
+								<td class="text-left">{{$order->updated_at}}</td>
 							</tr>
 							<tr>
 					            <td scope="row">Payment Status</td>
-								<td class="text-left">1</td>
+								<td class="text-left">{{$order->payment_status}}</td>
 							</tr>
 							<tr>
 					            <td scope="row">Order Status</td>
-								<td class="text-left">0</td>
+								<td class="text-left">{{$order->order_status}}</td>
 							</tr>
 						</tbody>
 

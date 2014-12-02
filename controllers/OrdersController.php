@@ -34,6 +34,9 @@ class OrdersController extends BaseController {
 			$insert['site'] = $tmp['site'];
 			$insert['total_price'] = $tmp['totalprice'];
 			$insert['customer_id'] = $tmp['customer_id'];
+			$insert['customer_name'] = $tmp['customer_name'];
+			$insert['customer_phone'] = $tmp['phone_number'];
+			$insert['customer_address'] = $tmp['address'];
 			// $insert['customer_name'] = $tmp['customer_name'];
 			$insert['customer_email'] = $tmp['email'];
 			if(array_key_exists('invoice_date', $tmp))$insert['invoice_date'] = date_create($tmp['invoice_date']);

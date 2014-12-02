@@ -9,7 +9,7 @@ a.ex{
 }
 </style>
 @section('content')
-@include('layout.navbar')
+
 <body style="background-color: #2c3338;">
 	<div class='container'>
 		<h1 style="color:white"> JSON Post Order Format!</h1>
