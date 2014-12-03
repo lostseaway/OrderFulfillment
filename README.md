@@ -1,8 +1,8 @@
 OrderFulfillment
 ================
 Our Order Fulfillment client: http://128.199.132.197/dntk/ <br>
-please fill username: test@test.com <br>
-            password: 1q2w3e4r5t <br>
+Username: test@test.com <br>
+Password: 1q2w3e4r5t <br>
 
 <h3>Description</h3>
 ---
@@ -52,11 +52,8 @@ SC: The order was approved by the fulfiller and ready to be shipped.
 UC8: Fulfiller can delete an order.
 SC: The order is deleted from the stock.
 ```
-<h3>API Documents & Design</h3>
+<h3>API Documents</h3>
 ---
-
-Design here:
-
 Documents here:<br>
 * [API Document](http://goo.gl/ZmGMBL)
 
