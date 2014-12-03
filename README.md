@@ -1,5 +1,8 @@
 OrderFulfillment
 ================
+Our Order Fulfillment client: http://128.199.132.197/dntk/
+please fill username: test@test.com
+            password: 1q2w3e4r5t
 
 <h3>Description</h3>
 ---
