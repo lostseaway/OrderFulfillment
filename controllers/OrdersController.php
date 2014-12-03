@@ -48,7 +48,7 @@ class OrdersController extends BaseController {
 			if(array_key_exists('payment_status',$tmp)){
 				$a;
 				if($tmp['payment_status']==0)$a = 'Waiting';
-				else if($tmp['payment_status']==1)$a = 'Paied';
+				else if($tmp['payment_status']==1)$a = 'Paid';
 				else $a = $tmp['payment_status'];
 				$insert['payment_status'] = $a;
 			}
