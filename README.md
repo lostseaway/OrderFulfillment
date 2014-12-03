@@ -56,6 +56,7 @@ SC: The order is deleted from the stock.
 ---
 Documents here:<br>
 * [API Document](http://goo.gl/ZmGMBL)
+* [System Sequence Diagram] (https://docs.google.com/drawings/d/1oa0xyF83Y1m0LpsDUxY2LBXPuIIW5E6m14PXTilBrAk/edit)
 
 <h3>Group Members</h3>
 ---
