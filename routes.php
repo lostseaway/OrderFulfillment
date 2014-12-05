@@ -42,13 +42,18 @@ Route::get('/orders/{id}', array(
 			'as' => 'orders-get-id',
 			'uses' => 'OrdersController@showId'
 	));
-Route::post('/orders/', array(
-		'as' => 'orders-post',
-		'uses' => 'OrdersController@postOrder'
-	));
+
 Route::get('/json', array(
 			'as' => 'orders-get-json',
 			'uses' => 'OrdersController@getJsonTemplate'
+	));
+Route::get('/test', array(
+		'as' => 'test',
+		'uses' => 'OrdersController@getTest'
+	));
+Route::post('/orders/fulfill', array(
+		'as' => 'order-post-fulfill',
+		'uses' => 'OrdersController@fulfill'
 	));
 
 Route::group(array('prefix' => 'api/v1'), function()
@@ -61,4 +66,24 @@ Route::group(array('prefix' => 'api/v1'), function()
 			'as' => 'get-api-orders-id' ,
 			'uses' => 'ApiController@getOrderByID'
 		));		
+		Route::get('/orders/{id}/status' , array(
+			'as' => 'get-api-orders-id' ,
+			'uses' => 'ApiController@getOrderStatusByID'
+		));
+		Route::post('/orders', array(
+			'as' => 'orders-post',
+			'uses' => 'ApiController@postOrder'
+		));
+		Route::put('/orders/{id}/order_status', array(
+			'as' => 'orders-put-orderstatus',
+			'uses' => 'ApiController@updateOrderStatus'
+		));		
+		Route::put('/orders/{id}/payment_status', array(
+			'as' => 'orders-put-paymentstatus',
+			'uses' => 'ApiController@updatePaymentStatus'
+		));	
+		Route::put('/orders/{id}/shipping_status', array(
+			'as' => 'orders-put-shippingstatus',
+			'uses' => 'ApiController@updateShippingStatus'
+		));	
 	});
