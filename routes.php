@@ -55,7 +55,10 @@ Route::post('/orders/fulfill', array(
 		'as' => 'order-post-fulfill',
 		'uses' => 'OrdersController@fulfill'
 	));
-
+Route::post('/orders/grap', array(
+		'as' => 'order-post-grap',
+		'uses' => 'OrdersController@grap'
+	));
 Route::group(array('prefix' => 'api/v1'), function()
 	{
 		Route::get('/orders' , array(

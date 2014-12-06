@@ -3,7 +3,9 @@ class OrdersController extends BaseController {
 	public function show(){
 		$user = Auth::user();
 		if($user){
-			$orders = DB::table('orders')->get();
+			$orders = DB::table('orders')
+			->orderBy('order_status', 'desc')
+			->get();
 			return View::make('orders.main')->with('orders',$orders);
 		}
 		return Redirect::route('home');
@@ -50,6 +52,17 @@ class OrdersController extends BaseController {
 			// 	$quantity = (int)$data['product']['quantity'];
 			// 	if()
 			// }
+	}
+
+	public function grap(){
+		$id = Input::get('order_id');
+		$orders = DB::table('orders')
+			->where('id','=',$id)
+			->first();
+
+			DB::table('orders')
+            ->where('id', $id)
+            ->update(array('order_status'=>'OnProcess','shipping_status'=>'Waiting'));	
 	}
 
 	public function getJsonTemplate(){

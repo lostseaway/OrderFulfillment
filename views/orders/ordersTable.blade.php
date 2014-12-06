@@ -21,6 +21,29 @@
         },1000);
 
     });
+
+    $("body").delegate(".grap", "click", function(e) {
+
+     e.preventDefault();
+
+     $.post("/dntk/orders/grap" , 
+        { order_id:$(this).attr("id")},
+        function(res,status) {
+         if( res.fail ) {
+            window.location.replace("http://128.199.132.197/dntk/");
+         }
+         else{
+         	alert("Fulfilled!");
+         	location.reload();
+         }
+      });
+
+        $('.wishlist a').css( 'color' , '#ffbe56' );
+        setTimeout( function() {
+          $('.wishlist a').css( 'color' , '#444' );
+        },1000);
+
+    });
 </script>
 
 		<table align="center" class="table table-hover" style="background-color:white;">
@@ -62,10 +85,14 @@
 				<td>{{$order->shipping_status}}</td>
 				<td><input type="button" class="btn btn-info btn-xs" value="Detail" onClick="window.open('/dntk/orders/{{$order->id}}')";></td>
 				<td>
-					@if ($order->order_status == 'Waiting' and $order->payment_status == 'Paid')
+					@if ($order->order_status == 'OnProcess' and $order->payment_status == 'Paid')
 					<input id="{{$order->id}}" type="button" class="btn btn-success btn-xs fulfill" value="Fulfill";>
+					@elseif ($order->order_status == 'Waiting' and $order->payment_status == 'Paid')
+					<input id="{{$order->id}}" type="button" class="btn btn-success btn-xs grap" value="Grap";>
+					@elseif ($order->order_status == 'Waiting' and $order->payment_status == 'Waiting')
+					<input id="{{$order->id}}"type="button" class="btn btn-default btn-xs" value="Grap" disabled="disabled";>
 					@else
-					<input id="{{$order->id}}"type="button" class="btn btn-success btn-xs" value="Fulfill" disabled="disabled";>
+					<input id="{{$order->id}}"type="button" class="btn btn-default btn-xs" value="Fulfill" disabled="disabled";>
 					@endif
 				</td>
 			

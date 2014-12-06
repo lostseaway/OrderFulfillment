@@ -127,7 +127,8 @@ class ApiController extends BaseController {
 		
 		$insert = array();
 		if($data['order_status']==0)$insert['order_status'] = 'Waiting';
-		else if($data['order_status']==1)$insert['order_status'] = 'Done';
+		else if($data['order_status']==1)$insert['order_status'] = 'OnProcess';
+		else if($data['order_status']==2)$insert['order_status'] = 'Fulfilled';
 		else return Response::json(array('error'=>true,'Message' => 'Input Mismatch','ReadMore' => route('orders-get-json')),400);
 
 
