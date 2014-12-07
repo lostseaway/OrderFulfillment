@@ -7,31 +7,31 @@ Password: 1q2w3e4r5t <br>
 <h3>Description</h3>
 ---
 
-A service for order fulfillment. The order fulfiller will validate the order if it is in stock and available for ordering or not. Approve the order for the customer and track the order as well. Given service of viewing and tracking the order as well as its components until the process of ordering is finished.
+A service for order fulfillment. The order fulfiller validates each order, checks if the order items are in stock and available for ordering or not. It approves the order for the customer and tracks the order as well. Provides a service for viewing and tracking an order as well as its components until the process of ordering is finished.
 
 <h3>Concept</h3>
 ---
 
-Order Fulfillment describes everything the seller does from the moment the order has been placed to the event where the purchased order is in the buyer's hand. Includes the process of receiving products to sell, storing products, and providing controls of inventory.
+Order Fulfillment describes everything the seller does from the moment the order has been placed to the event where the purchased order is in the buyer's hands. It includes the process of receiving products to sell, storing products, and providing control of inventory.
 
 <h3>Use Cases</h3>
 ---
 
 ```
-UC1: Customer makes an order.
+UC1: Merchant places an order.
 SC: Order is created.
 ```
 ```
-UC2: Fulfiller can view orders.
+UC2: Fulfiller views orders.
 SC: Orders are all shown for the fulfiller.
 ```
 ```
-UC3: Fulfiller can view a specific order.
+UC3: Fulfiller views a specific order.
 SC: Specific order is shown given a specific ID.
 ```
 ```
-UC4: Customer can edit an order.
-SC: Order is edited and submitted back.
+UC4: Merchant modifies an order.
+SC: Order is modified, provided it has not yet been processed, and updated in order fulfillment system.
 ```
 ```
 UC5: Customer can cancel an order.
