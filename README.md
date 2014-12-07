@@ -26,7 +26,7 @@ UC2: Merchant views orders.
 SC: Orders are all shown for the merchant.
 ```
 ```
-UC3: Fulfiller views a specific order.
+UC3: Merchant views a specific order.
 SC: Specific order is shown given a specific ID.
 ```
 ```
