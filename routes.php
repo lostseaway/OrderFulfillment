@@ -88,5 +88,9 @@ Route::group(array('prefix' => 'api/v1'), function()
 		Route::put('/orders/{id}/shipping_status', array(
 			'as' => 'orders-put-shippingstatus',
 			'uses' => 'ApiController@updateShippingStatus'
+		));
+		Route::post('/testt', array(
+			'as' => 'test-post',
+			'uses' => 'ApiController@testPost'
 		));	
 	});

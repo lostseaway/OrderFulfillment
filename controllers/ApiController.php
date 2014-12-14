@@ -187,6 +187,12 @@ class ApiController extends BaseController {
 		return Response::json(array('error'=>false,'Message' => "shipping_status Updated"),200);
 	}
 
+	public function testPost(){
+		if(!Request::isJson())return Response::json(array('error'=>true,'Message' => 'Input type not support , require JSON','ReadMore' => route('orders-get-json')),406);
+		$data = Input::all();
+		return Response::json(array('error'=>false,'Message' => $data),200);
+	}
+
 
 
 	

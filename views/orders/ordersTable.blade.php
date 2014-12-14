@@ -15,11 +15,6 @@
          }
       });
 
-        $('.wishlist a').css( 'color' , '#ffbe56' );
-        setTimeout( function() {
-          $('.wishlist a').css( 'color' , '#444' );
-        },1000);
-
     });
 
     $("body").delegate(".grap", "click", function(e) {
@@ -33,7 +28,7 @@
             window.location.replace("http://128.199.132.197/dntk/");
          }
          else{
-         	alert("Fulfilled!");
+         	alert("graped!");
          	location.reload();
          }
       });
