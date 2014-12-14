@@ -7,7 +7,8 @@
         { order_id:$(this).attr("id")},
         function(res,status) {
          if( res.fail ) {
-            window.location.replace("http://128.199.132.197/dntk/");
+            // window.location.replace("http://128.199.132.197/dntk/");
+          alert(res);
          }
          else{
          	alert("Fulfilled!");

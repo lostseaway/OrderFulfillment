@@ -32,6 +32,7 @@
 		                  <th>Name</th>
 		                  <th>Unit Price</th>
 		                  <th>Quantity</th>
+		                  <th>Weight</th>
 		                  <th>Total Price</th>
 		               </thead>
 	               	</tr>
@@ -42,6 +43,7 @@
 	                     <td><h5>{{$product->product_name}}</h5></td>
 	                     <td>{{$product->price}}<h> baht<h></td>
 	                     <td>{{$product->quantity}}</td>
+	                     <td>{{$product->weight}}</td>
 	                     <td>{{(float)$product->price*(float)$product->quantity}}<h> baht<h> </td>
 	                  </tr>
                		</tbody>
@@ -86,7 +88,7 @@
 					    <thead>
 					        <tr>
 					            <th class="text-left">Shipment ID:</th>
-					            <th class="text-left">1</th>
+					            <th class="text-left">{{$order->ship_id}}</th>
 					        </tr>
 					    </thead>
 					    <tbody>

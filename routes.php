@@ -59,6 +59,14 @@ Route::post('/orders/grap', array(
 		'as' => 'order-post-grap',
 		'uses' => 'OrdersController@grap'
 	));
+Route::post('/orders/{id}/ship', array(
+		'as' => 'order-post-ship',
+		'uses' => 'OrdersController@sendToShipment'
+	));
+Route::get('/access.php', array(
+		'as' => 'access',
+		'uses' => 'OrdersController@access'
+	));
 Route::group(array('prefix' => 'api/v1'), function()
 	{
 		Route::get('/orders' , array(
@@ -89,7 +97,7 @@ Route::group(array('prefix' => 'api/v1'), function()
 			'as' => 'orders-put-shippingstatus',
 			'uses' => 'ApiController@updateShippingStatus'
 		));
-		Route::post('/testt', array(
+		Route::post('/test', array(
 			'as' => 'test-post',
 			'uses' => 'ApiController@testPost'
 		));	

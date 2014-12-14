@@ -108,7 +108,7 @@ class ApiController extends BaseController {
 				}
 				else return Response::json(array('error'=>true,'Message' => 'Input Mismatch','ReadMore' => route('orders-get-json')),400);
 			}
-			return Response::json(array('error'=>false,'order_id' => $id),200);	
+			return Response::json(array('error'=>false,'order_id' => $id,'url'=>'http://128.199.132.197/dntk/orders/'.$id),200);	
 		}
 		return Response::json(array('error'=>true,'Message' => 'Input Mismatch','ReadMore' => route('orders-get-json')),400);
 
@@ -222,6 +222,7 @@ class ApiController extends BaseController {
 			$p['price'] = $pro['price'];
 			$p['quantity'] = $pro['quantity'];
 			$p['created_at'] = new DateTime();
+			if(array_key_exists('weight', $pro))$p['weight'] = $pro['weight'];
 
 			DB::table('products_order')->insert($p);
 		}
