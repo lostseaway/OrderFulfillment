@@ -18,38 +18,38 @@ Order Fulfillment describes everything the seller does from the moment the order
 ---
 
 ```
-UC1: Customer makes an order.
+UC1: Merchant makes an order.
 SC: Order is created.
 ```
 ```
-UC2: Fulfiller can view orders.
-SC: Orders are all shown for the fulfiller.
+UC2: Merchant views orders.
+SC: Orders are all shown for the merchant.
 ```
 ```
-UC3: Fulfiller can view a specific order.
+UC3: Merchant views a specific order.
 SC: Specific order is shown given a specific ID.
 ```
 ```
-UC4: Customer can edit an order.
+UC4: Merchant edits an order.
 SC: Order is edited and submitted back.
 ```
 ```
-UC5: Customer can cancel an order.
+UC5: Merchant cancels an order.
 SC: Order is cancelled from the fulfillment process.
 ```
 ```
-UC6: Customer can check an order's status.
-SC: An order's status is shown to the customer. Describing current status (eg. is Processing).
+UC6: Merchant checks an order's status.
+SC: An order's status is shown to the merchant. Describing current status (eg. is Processing).
 
-UC6a: Fulfiller can check an order's status
-SC: An order's status is shown to the fulfiller for race conditions.
+UC6a: Merchant checks an order's status
+SC: An order's status is shown to the merchant for race conditions.
 ```
 ```
-UC7: Fulfiller can fulfill an order.
-SC: The order was approved by the fulfiller and ready to be shipped.
+UC7: Merchant fulfills an order.
+SC: The order was approved by the merchant and ready to be shipped.
 ```
 ```
-UC8: Fulfiller can delete an order.
+UC8: Merchant deletes an order.
 SC: The order is deleted from the stock.
 ```
 <h3>API Documents</h3>
