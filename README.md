@@ -48,10 +48,6 @@ SC: An order's status is shown to the merchant for race conditions.
 UC7: Merchant fulfills an order.
 SC: The order was approved by the merchant and ready to be shipped.
 ```
-```
-UC8: Merchant deletes an order.
-SC: The order is deleted from the stock.
-```
 <h3>API Documents</h3>
 ---
 Documents here:<br>
