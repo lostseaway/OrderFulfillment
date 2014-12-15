@@ -30,22 +30,14 @@ UC3: Merchant views a specific order.
 SC: Specific order is shown given a specific ID.
 ```
 ```
-UC4: Merchant edits an order.
-SC: Order is edited and submitted back.
-```
-```
-UC5: Merchant cancels an order.
-SC: Order is cancelled from the fulfillment process.
-```
-```
-UC6: Merchant checks an order's status.
+UC4: Merchant checks an order's status.
 SC: An order's status is shown to the merchant. Describing current status (eg. is Processing).
 
-UC6a: Merchant checks an order's status
+UC4a: Merchant checks an order's status
 SC: An order's status is shown to the merchant for race conditions.
 ```
 ```
-UC7: Merchant fulfills an order.
+UC5: Merchant fulfills an order.
 SC: The order was approved by the merchant and ready to be shipped.
 ```
 <h3>API Documents</h3>
