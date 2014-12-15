@@ -27,13 +27,15 @@ a.ex{
 					<a class='ex'>"product_id"</a>: "0001",
 					<a class='ex'>"product_name"</a>: "product_test1",
 					<a class='ex'>"price"</a>: "199",
-					<a class='ex'>"quantity"</a>: "1"
+					<a class='ex'>"quantity"</a>: "1",
+					<a class='ex'>"weight"</a>: "1.2"
 				},
 				{
 					<a class='ex'>"product_id"</a>: "0002",
 					<a class='ex'>"product_name"</a>: "product_test2",
 					<a class='ex'>"price"</a>: "99",
-					<a class='ex'>"quantity"</a>: "1"
+					<a class='ex'>"quantity"</a>: "1",
+					<a class='ex'>"weight"</a>: "1.2"
 				}
 			],
 			<a class='ex'>"totalprice"</a>: "298",

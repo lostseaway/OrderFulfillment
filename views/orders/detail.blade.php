@@ -112,6 +112,10 @@
 					            <td scope="row">Order Status</td>
 								<td class="text-left">{{$order->order_status}}</td>
 							</tr>
+							<tr>
+					            <td scope="row">Shipping Status</td>
+								<td class="text-left">{{$order->shipping_status}}</td>
+							</tr>
 						</tbody>
 
 					</table>

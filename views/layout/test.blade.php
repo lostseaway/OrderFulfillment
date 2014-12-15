@@ -1,5 +1,25 @@
 <?php
-$string = "HTTP/1.1 201 Created Date: Sun, 14 Dec 2014 16:19:46 GMT Access-Control-Allow-Origin: * Access-Control-Allow-Methods: POST, PUT, GET, DELETE Access-Control-Allow-Headers: Content-Type, Accept, Authorization Location: http://track-trace.tk:8080/shipments/16 Content-Length: 0 Server: Jetty(9.2.z-SNAPSHOT)";
-preg_match('~shipments/(\d+)~', $string, $m );
-var_dump($m[1]); // $m[1] is your string
+
+function httpGet($url)
+{
+    $ch = curl_init();  
+ 
+    curl_setopt($ch,CURLOPT_URL,$url);
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+//  curl_setopt($ch,CURLOPT_HEADER, false); 
+ 
+    $output=curl_exec($ch);
+ 
+    curl_close($ch);
+    return $output;
+}
+ 
+$content = httpGet("http://track-trace.tk:8080/shipments/16/status");
+$content = explode("\n", $content);
+foreach($content as $header) {
+		    // if (stripos($header, 'Location:') !== false) {
+		       preg_match('/<status(.*?)status>/i', $header, $m );
+		    // }
+		}
+var_dump($m[0]);
 ?>

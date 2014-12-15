@@ -16,6 +16,10 @@ class OrdersController extends BaseController {
 			->where('id','=',$id)
 			->first();
 
+			$this->updateShipStatus($id,$orders->ship_id);
+			$orders = DB::table('orders')
+			->where('id','=',$id)
+			->first();
 			// if($orders==null)return 
 			$products = DB::table('products_order')
 			->where('order_id','=',$id)
@@ -132,17 +136,42 @@ class OrdersController extends BaseController {
 		// return $m;
 
 	}
-	function array2xml($array, $xml = false){
-    if($xml === false){
-        $xml = new SimpleXMLElement('<shipment/>');
-    }
-    foreach($array as $key => $value){
-        if(is_array($value)){
-            array2xml($value, $xml->addChild($key));
-        }else{
-            $xml->addChild($key, $value);
-        }
-    }
-    return $xml->asXML();
-}
+	private function updateShipStatus($id,$sid){
+		$orders = DB::table('orders')
+			->where('id','=',$id)
+			->first();
+		if($orders->order_status!="Fulfilled")return;
+		if($orders->shipping_status=="Done")return;
+		$status = $this->loadShipStatus($sid);
+		if($orders->shipping_status==$status)return;
+		DB::table('orders')
+		->where('id','=',$id)
+		->update(array('shipping_status'=>$status));
+	}
+
+	private function loadShipStatus($id){
+		$content = $this->httpGet("http://track-trace.tk:8080/shipments/16/status");
+		$content = explode("\n", $content);
+		foreach($content as $header) {
+				    // if (stripos($header, 'Location:') !== false) {
+				       preg_match('/<status(.*?)status>/i', $header, $m );
+				    // }
+				}
+		// var_dump($m[0]);
+		return $m[0];
+	}
+	
+	private function httpGet($url)
+	{
+	    $ch = curl_init();  
+	 
+	    curl_setopt($ch,CURLOPT_URL,$url);
+	    curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+	//  curl_setopt($ch,CURLOPT_HEADER, false); 
+	 
+	    $output=curl_exec($ch);
+	 
+	    curl_close($ch);
+	    return $output;
+	}	
 }
